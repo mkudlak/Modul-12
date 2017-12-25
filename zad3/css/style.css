@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(94, 173, 235);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+#search {
+    font-size: 30px;
+    font-family: Lato;
+}
+#country-name {
+    font-size: 30px;
+    font-family: Lato;
+}
+
+ul, menu, dir { 
+    list-style-type: none;
+}
