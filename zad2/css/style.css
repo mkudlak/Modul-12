@@ -1,8 +1,49 @@
+
 body {
-    background-color: rgb(41, 35, 35);
+    background-color: rgb(94, 173, 235);
     color: white;
+    font-family: 'Lato', sans-serif;
     text-align: center;
 }
-button {
+main {
+    height: 100vh;
+}
+h1 {
+    font-size: 50px;
+    letter-spacing: 1px;
+    padding: 30px;
+}
+.box {
+    height: 200px;
+    line-height: 30px;
+}
+.button-click {
+    margin-top: 40px;
+    display: inline-block;
+}
+.trigger {
+    padding: 10px 80px;
     font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    background-color: rgb(94, 173, 235);
+    border: 1px solid white;
+}
+.trigger:hover, .twitter:hover  {
+    cursor: pointer;
+    background-color: rgb(29, 124, 196);
+}
+.twitter {
+    margin-top: 20px;
+    display: block;
+    padding: 10px 80px;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    background-color: rgb(94, 173, 235);
+    border: 1px solid white;
+}
+a:-webkit-any-link {
+    text-decoration: none;
+    color: white;
 }
