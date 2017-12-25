@@ -3,3 +3,18 @@ body {
     color: white;
     text-align: center;
 }
+
+button {
+    font-size: 30px;
+    font-family: Aral;
+    cursor: pointer;
+    padding: 10px;
+}
+button:hover {
+    background-color: #4d97c3;
+    color: white;
+}
+#joke {
+    font-size: 35px;
+    color: #4d97c3
+}
