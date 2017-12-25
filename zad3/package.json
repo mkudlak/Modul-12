@@ -4,12 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:html",
+    "test:html": "nu-html-checker *.html",
+
+    "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
+    "build:sass": "sass --sourcemap=none --update sass:css",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "prebuild": "rimraf css/*",
+
+    "watch": "parallelshell \"npm run watch:sassprefixer\" \"npm run watch:browsersync\" ",
+    "watch:sassprefixer": "onchange sass/*.scss -- npm run build:sass &&  npm run build:autoprefixer",
+    "watch:browsersync": "node_modules/.bin/browser-sync start --server --files 'css/*.css' '*.html'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "browser-sync": "^2.21.0"
+    "browser-sync": "^2.21.0",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "parallelshell": "^3.0.2"
   }
 }
