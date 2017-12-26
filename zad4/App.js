@@ -1,4 +1,39 @@
-// OGÓLNA FUNKCJA
+var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
+var myHeaders = {
+    'X-Client-Id': '1982',
+    'X-Auth-Token': 'bacd9703c2eb179450c854263628ce4d'
+};
+
+$.ajaxSetup({
+    headers: myHeaders
+});
+
+
+$.ajax({
+    url: baseUrl + '/board',
+    method: 'GET',
+    success: function(response) {
+      setupColumns(response.columns);
+    }
+});
+
+function setupColumns(columns) {
+    columns.forEach(function (column) {
+  		var col = new Column(column.id, column.name);
+        board.createColumn(col);
+        setupCards(col, column.cards);
+    });
+}
+
+function setupCards(col, cards) {
+	cards.forEach(function (card) {
+        var card = new Card(card.id, card.name, card.bootcamp_kanban_column_id);
+    	col.createCard(card);
+  	});
+}
+
+// Z poprzedniego zadania
+/*// OGÓLNA FUNKCJA z poprzedniego zadania
 function randomString() {
 	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'.split();
 	var str = '', i;
@@ -24,4 +59,4 @@ var card2 = new Card('stworzyc tablice kanban');
 
 // DODAWANIE KART DO KOLUMN
 todoColumn.createCard(card1);
-doingColumn.createCard(card2);
+doingColumn.createCard(card2);*/
